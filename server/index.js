@@ -9,8 +9,10 @@ const LectureModel = require('./Models/AddLecture');
 const app = express();
 
 app.use(express.json());
+
+const allowedOrigins = [process.env.CLIENT_ORIGIN];
 app.use(cors({
-    origin: ['http://localhost:5173'],
+    origin: [ allowedOrigins ],
     credentials: true
 }));
 
