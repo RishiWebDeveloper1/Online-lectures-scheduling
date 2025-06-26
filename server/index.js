@@ -38,10 +38,6 @@ app.post("/api/admin-login", async (req, res) => {
     const { username, password } = req.body;
 
     try {
-        const users = await UserModel.find({}, 'username');
-        const usernames = users.map(user => user.username);
-        console.log("All Usernames:", usernames);
-
         const user = await UserModel.findOne({ username });
 
         if (!user) {
@@ -68,10 +64,6 @@ app.post("/api/teacher-login", async (req, res) => {
     const { username, password } = req.body;
 
     try {
-        const users = await UserModel.find({}, 'username');
-        const usernames = users.map(user => user.username);
-        console.log("All Usernames:", usernames);
-
         const user = await UserModel.findOne({ username });
 
         if (!user) {

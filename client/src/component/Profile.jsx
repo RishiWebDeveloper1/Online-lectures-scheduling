@@ -10,7 +10,7 @@ const Profile = () => {
     const query = new URLSearchParams(useLocation().search);
     const username = query.get("user");
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/show-user`, { params: {username: username} })
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/show-user`, { params: { username: username } })
             .then(res => {
                 setUserDetail(res.data);
             })
@@ -52,13 +52,7 @@ const Profile = () => {
                         </div>
                     </div>
                     <div className="student-profile-image-box">
-                        {
-                            // userDetail? (
-                                // <img src={`${userDetail.userImage}`} alt="" className="student-profile-image" />
-                            // ) : (
-                                <img src={DefaultUserIcon} alt="" className="student-profile-image" />
-                            // )
-                        }
+                        <img src={DefaultUserIcon} alt="" className="student-profile-image" />
                     </div>
                 </div>
             </div>

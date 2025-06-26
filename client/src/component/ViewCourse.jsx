@@ -9,7 +9,6 @@ const ViewCourse = () => {
   useEffect(() => {
     axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/viewCourses`)
       .then(res => {setCourses(res.data)
-        console.log(res.data)
       })
       .catch(err => console.error("Failed to fetch courses:", err));
   }, []);
