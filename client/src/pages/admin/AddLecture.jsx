@@ -13,7 +13,7 @@ const AddLecture = () => {
     const [instructors, setInstructors] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/instructors')
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/instructors`)
             .then(res => {
                 setInstructors(res.data);
             })
@@ -25,7 +25,7 @@ const AddLecture = () => {
     const [courses, setCourses] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/courses')
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/courses`)
             .then(res => {
                 setCourses(res.data);
             })
@@ -45,7 +45,7 @@ const AddLecture = () => {
         e.preventDefault();
 
         try {
-            await axios.post('http://localhost:3000/api/add-lecture', formData);
+            await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/add-lecture`, formData);
             alert("Lecture added successfully!");
             setFormData({ instructor: '', course: '', date: '' });
         } catch (error) {

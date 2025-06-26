@@ -17,7 +17,7 @@ const AddCourse = () => {
     const [instructors, setInstructors] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/instructors')
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/instructors`)
             .then(res => {
                 setInstructors(res.data);
             })
@@ -41,8 +41,8 @@ const AddCourse = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:3000/api/add-course', formData);
-            const response2 = await axios.post('http://localhost:3000/api/add-lecture', formData);
+            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/add-course`, formData);
+            const response2 = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/add-lecture`, formData);
             alert("Course added successfully!");
             setFormData({
                 name: '',
