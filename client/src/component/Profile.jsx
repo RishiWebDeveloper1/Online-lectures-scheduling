@@ -10,7 +10,7 @@ const Profile = () => {
     const query = new URLSearchParams(useLocation().search);
     const username = query.get("user");
     useEffect(() => {
-        axios.get("http://localhost:3000/api/show-user", { params: {username: username} })
+        axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/show-user`, { params: {username: username} })
             .then(res => {
                 setUserDetail(res.data);
             })

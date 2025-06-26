@@ -18,7 +18,7 @@ const Auth = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post("http://localhost:3000/api/admin-login", {
+            const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/admin-login`, {
                 username: adminUsername,
                 password: adminPassword,
             });
@@ -37,7 +37,7 @@ const Auth = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post("http://localhost:3000/api/teacher-login", {
+            const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/teacher-login`, {
                 username: teacherUsername,
                 password: teacherPassword,
             });

@@ -7,7 +7,7 @@ const ViewLecture = () => {
   const [lectures, setLectures] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/lectures")
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/lectures`)
       .then(res => setLectures(res.data))
       .catch(err => console.error("Failed to fetch lectures:", err));
   }, []);

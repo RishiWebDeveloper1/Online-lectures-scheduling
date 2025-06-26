@@ -7,7 +7,7 @@ const ViewCourse = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/viewCourses")
+    axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/viewCourses`)
       .then(res => {setCourses(res.data)
         console.log(res.data)
       })

@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require('dotenv').config();
 const UserModel = require("./Models/User");
 const CourseModel = require('./Models/AddCourse');
 const LectureModel = require('./Models/AddLecture');
@@ -13,9 +14,11 @@ app.use(cors({
     credentials: true
 }));
 
-mongoose.connect('mongodb://127.0.0.1:27017/onlineLectures')
-    .then(() => console.log("MongoDB Connected"))
-    .catch((err) => console.error("MongoDB connection error:", err));
+const PORT = process.env.PORT || 3000;
+
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log("DB connected"))
+  .catch(err => console.log(err));
 
 // ******************** Auth page api ********************
 app.get("/api/show-user", async (req, res) => {
