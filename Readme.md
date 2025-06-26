@@ -48,7 +48,7 @@ Built with **MERN stack** and deployed on **Render (backend)** + **Vercel (front
 
 ---
 
-## 🗂️ Folder Structure (Main Parts)
+### 🗂️ Folder Structure (Main Parts)
 /backend
 ├── models/
 └── index.js
@@ -74,7 +74,7 @@ Built with **MERN stack** and deployed on **Render (backend)** + **Vercel (front
 
 ---
 
-## Links
+### Links
 -/login
 -/admin/addCourse
 -/admin/addLecture
