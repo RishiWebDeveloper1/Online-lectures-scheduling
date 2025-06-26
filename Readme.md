@@ -75,14 +75,14 @@ Built with **MERN stack** and deployed on **Render (backend)** + **Vercel (front
 ---
 
 ### Links
--/login
--/admin/addCourse
--/admin/addLecture
--/admin/addUser
--/admin/viewCourse
--/admin/viewLecture
--/user/viewCourse
--/user/viewLecture
+- /login
+- /admin/addCourse
+- /admin/addLecture
+- /admin/addUser
+- /admin/viewCourse
+- /admin/viewLecture
+- /user/viewCourse
+- /user/viewLecture
 
 ---
 
